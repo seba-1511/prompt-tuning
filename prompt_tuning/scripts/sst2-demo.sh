@@ -31,4 +31,7 @@ python3 -m t5x.train \
   --gin.INITIAL_CHECKPOINT_PATH="'${PRETRAINED_MODEL}'" \
   --gin.TRAIN_STEPS="1_150_000" \
   --gin.USE_CACHED_TASKS="False" \
+  --gin.EVAL_PERIOD=1000 \
+  --gin.DROPOUT_RATE=0 \
+  --gin.LEARNING_RATE=0.05 \
   --tfds_data_dir=${TFDS_DATA_DIR}
