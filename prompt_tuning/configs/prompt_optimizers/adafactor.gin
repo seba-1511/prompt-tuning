@@ -1,0 +1,23 @@
+
+from __gin__ import dynamic_registration
+from t5x import train_state
+
+import jax
+import optax
+import functools
+
+
+PROMPT_LEARNING_RATE = 0.05
+
+optax.adafactor.learning_rate = %PROMPT_LEARNING_RATE
+optax.adafactor.min_dim_size_to_factor = 128
+optax.adafactor.decay_rate = 0.8
+optax.adafactor.decay_offset = -1000000
+optax.adafactor.multiply_by_parameter_scale = False
+optax.adafactor.clipping_threshold = 1.0
+optax.adafactor.momentum = None
+optax.adafactor.weight_decay_rate = 1e-5
+optax.adafactor.eps = 1e-30
+optax.adafactor.factored = True
+
+train_state.get_optax_optimizer.optimizer = @optax.adafactor()

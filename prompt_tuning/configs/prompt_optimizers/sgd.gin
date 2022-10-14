@@ -1,0 +1,15 @@
+
+from __gin__ import dynamic_registration
+from t5x import train_state
+
+import jax
+import optax
+import functools
+
+
+PROMPT_LEARNING_RATE = 0.05
+
+optax.sgd.learning_rate = %PROMPT_LEARNING_RATE
+optax.sgd.momentum = 0.0
+
+train_state.get_optax_optimizer.optimizer = @optax.sgd()
