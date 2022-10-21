@@ -1,1 +1,1 @@
-tensorboard --logdir gs://melodi-bucket0/models/debug/ --load_fast false
+tensorboard --logdir gs://melodi-bucket0/models/ --load_fast false
