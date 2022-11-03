@@ -32,11 +32,11 @@ python3 -m t5x.train \
   --gin.TASK_FEATURE_LENGTHS="{'inputs': 512, 'targets': 16}" \
   --gin.INITIAL_CHECKPOINT_PATH="'${PRETRAINED_MODEL}'" \
   --gin.TRAIN_STEPS="1_150_000" \
-  --gin.EVAL_PERIOD=100 \
+  --gin.EVAL_PERIOD=10 \
   --gin.DROPOUT_RATE=0 \
-  --gin.PROMPT_LEARNING_RATE=0.1 \
-  --gin.BATCH_SIZE=16 \
-  --gin.Trainer.num_microbatches=2 \
-  --gin.PROMPT_LENGTH=32 \
+  --gin.PROMPT_LEARNING_RATE=0.05 \
+  --gin.BATCH_SIZE=128 \
+  --gin.Trainer.num_microbatches=64 \
+  --gin.PROMPT_LENGTH=100 \
   --gin.partitioning.PjitPartitioner.model_parallel_submesh="(2,2,1,2)" \
   --tfds_data_dir=${TFDS_DATA_DIR}
