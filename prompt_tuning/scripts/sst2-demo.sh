@@ -32,8 +32,8 @@ python3 -m t5x.train \
   --gin.INITIAL_CHECKPOINT_PATH="'${PRETRAINED_MODEL}'" \
   --gin.TRAIN_STEPS="1_150_000" \
   --gin.EVAL_PERIOD=100 \
-  --gin.DROPOUT_RATE=0 \
-  --gin.PROMPT_LEARNING_RATE=0.05 \
+  --gin.DROPOUT_RATE=0.1 \
+  --gin.PROMPT_LEARNING_RATE=0.3 \
   --gin.BATCH_SIZE=128 \
   --gin.Trainer.num_microbatches=64 \
   --gin.PROMPT_LENGTH=100 \
