@@ -35,6 +35,7 @@ python3 -m t5x.train \
   --gin.OPTAX_LEARNING_RATE=1.0 \
   --gin.OPTAX_MOMENTUM=0.0 \
   --gin.OPTAX_MELODI_PATH='"gs://melodi-bucket0/melodi_training/lm100k_spot/task=flan68_debug/horizon=32/memory=64/bsz=32/lr=5e-5/"' \
+  --gin.OPTAX_MELODI_MEMORY=64 \
   --gin.OPTAX_OPTIMIZER='"melodi"' \
   --gin.BATCH_SIZE=128 \
   --gin.Trainer.num_microbatches=64 \
