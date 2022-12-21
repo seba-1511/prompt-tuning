@@ -29,12 +29,12 @@ python3 -m t5x.train \
   --gin_file="../melodi/experimental/gins/methods/prompt_init/spot_c4.gin" \
   --gin.MODEL_DIR="'${MODEL_DIR}'" \
   --gin.INITIAL_CHECKPOINT_PATH="'${PRETRAINED_MODEL}'" \
-  --gin.TRAIN_STEPS="1_150_000" \
+  --gin.TRAIN_STEPS="1_105_000" \
   --gin.EVAL_PERIOD=50 \
   --gin.DROPOUT_RATE=0.1 \
   --gin.OPTAX_LEARNING_RATE=1.0 \
   --gin.OPTAX_MOMENTUM=0.0 \
-  --gin.OPTAX_MELODI_PATH='"gs://melodi-bucket0/melodi_training/xl-newhyper-spot/task=flan68/model=small_sequence/horizon=32/memory=128/bsz=128/lr=5e-5"' \
+  --gin.OPTAX_MELODI_PATH='"gs://melodi-bucket0/melodi_training/xl-newhyper-spot/task=flan68/model=small_sequence/horizon=32/memory=128/bsz=128/lr=5e-5/1671547952"' \
   --gin.OPTAX_MELODI_MEMORY=128 \
   --gin.OPTAX_OPTIMIZER='"melodi"' \
   --gin.BATCH_SIZE=128 \
