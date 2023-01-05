@@ -25,17 +25,18 @@ python3 -m t5x.train \
   --gin_file="prompt_tuning/configs/models/t5_1_1_xl_prompt.gin" \
   --gin_file="prompt_tuning/configs/runs/prompt_finetune.gin" \
   --gin_file="prompt_tuning/configs/melodi/optax_optimizer.gin" \
-  --gin_file="../melodi/experimental/gins/tasks/squad.gin" \
+  --gin_file="../melodi/experimental/gins/tasks/sst2.gin" \
   --gin_file="../melodi/experimental/gins/methods/prompt_init/spot_c4.gin" \
   --gin.MODEL_DIR="'${MODEL_DIR}'" \
   --gin.INITIAL_CHECKPOINT_PATH="'${PRETRAINED_MODEL}'" \
   --gin.TRAIN_STEPS="1_105_000" \
   --gin.EVAL_PERIOD=50 \
-  --gin.DROPOUT_RATE=0.1 \
+  --gin.DROPOUT_RATE=0.0 \
   --gin.OPTAX_LEARNING_RATE=1.0 \
   --gin.OPTAX_MOMENTUM=0.0 \
-  --gin.OPTAX_MELODI_PATH='"gs://melodi-bucket0/melodi_training/xl-newhyper-spot/task=flan68/model=small_sequence/horizon=32/memory=128/bsz=128/lr=5e-5/1671547952"' \
+  --gin.OPTAX_MELODI_PATH='"gs://melodi-bucket0/melodi_training/xl-newhyper/task=flan15_nodropout/model=small_sequence/horizon=32/memory=128/bsz=128/lr=5e-5/1672857694"' \
   --gin.OPTAX_MELODI_MEMORY=128 \
+  --gin.OPTAX_MELODI_MODEL='"gradients"' \
   --gin.OPTAX_OPTIMIZER='"melodi"' \
   --gin.BATCH_SIZE=128 \
   --gin.Trainer.num_microbatches=64 \
