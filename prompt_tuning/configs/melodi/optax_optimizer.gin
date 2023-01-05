@@ -13,9 +13,11 @@ OPTAX_LEARNING_RATE = 0.3
 OPTAX_MOMENTUM = 0.0
 OPTAX_MELODI_PATH = 'gs://melodi-bucket0/melodi_training/task=glue_mnli_and_dev_v002/horizon=32/memory=256/bsz=64/lr=5e-5'
 OPTAX_MELODI_MEMORY = 256
+OPTAX_MELODI_MODEL = 'gradient'
 
 train_state.get_optax_optimizer.optimizer_name = %OPTAX_OPTIMIZER
 train_state.get_optax_optimizer.learning_rate = %OPTAX_LEARNING_RATE
 train_state.get_optax_optimizer.momentum = %OPTAX_MOMENTUM
 train_state.get_optax_optimizer.melodi_path = %OPTAX_MELODI_PATH
 train_state.get_optax_optimizer.melodi_memory = %OPTAX_MELODI_MEMORY
+train_state.get_optax_optimizer.melodi_model = %OPTAX_MELODI_MODEL
