@@ -34,7 +34,7 @@ python3 -m t5x.train \
   --gin.DROPOUT_RATE=0.0 \
   --gin.OPTAX_LEARNING_RATE=1.0 \
   --gin.OPTAX_MOMENTUM=0.0 \
-  --gin.OPTAX_MELODI_PATH='"gs://melodi-bucket0/melodi_training/xl-newhyper/task=flan15_nodropout/model=small_sequence/horizon=32/memory=128/bsz=128/lr=5e-5/1672857694"' \
+  --gin.OPTAX_MELODI_PATH='"gs://melodi-bucket0/melodi_training/xl-newhyper/task=flan15_nodropout/model=small_sequence/horizon=4/memory=128/bsz=1024/lr=5e-5/1672956704"' \
   --gin.OPTAX_MELODI_MEMORY=128 \
   --gin.OPTAX_MELODI_MODEL='"gradients"' \
   --gin.OPTAX_OPTIMIZER='"melodi"' \
