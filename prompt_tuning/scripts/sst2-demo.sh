@@ -25,10 +25,11 @@ python3 -m t5x.train \
   --gin_file="prompt_tuning/configs/models/t5_1_1_xl_prompt.gin" \
   --gin_file="prompt_tuning/configs/runs/prompt_finetune.gin" \
   --gin_file="prompt_tuning/configs/melodi/optax_optimizer.gin" \
-  --gin_file="../melodi/experimental/gins/tasks/mnli.gin" \
+  --gin_file="../melodi/experimental/gins/tasks/flan.gin" \
   --gin_file="../melodi/experimental/gins/methods/prompt_init/spot_c4.gin" \
   --gin.MODEL_DIR="'${MODEL_DIR}'" \
   --gin.INITIAL_CHECKPOINT_PATH="'${PRETRAINED_MODEL}'" \
+  --gin.FLAN_TASK="'aeslc_type_0'" \
   --gin.TRAIN_STEPS="1_105_000" \
   --gin.EVAL_PERIOD=50 \
   --gin.DROPOUT_RATE=0.0 \
