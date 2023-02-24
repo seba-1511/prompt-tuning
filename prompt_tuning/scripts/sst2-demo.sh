@@ -27,6 +27,7 @@ python3 -m t5x.train \
   --gin_file="prompt_tuning/configs/melodi/optax_optimizer.gin" \
   --gin_file="../melodi/experimental/gins/tasks/mnli.gin" \
   --gin_file="../melodi/experimental/gins/methods/prompt_init/spot_c4.gin" \
+  --gin.FLAN_TASK="'hellaswag_type_0'" \
   --gin.MODEL_DIR="'${MODEL_DIR}'" \
   --gin.INITIAL_CHECKPOINT_PATH="'${PRETRAINED_MODEL}'" \
   --gin.TRAIN_STEPS="1_103_000" \
