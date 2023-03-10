@@ -25,23 +25,24 @@ python3 -m t5x.train \
   --gin_file="prompt_tuning/configs/models/t5_1_1_xl_prompt.gin" \
   --gin_file="prompt_tuning/configs/runs/prompt_finetune.gin" \
   --gin_file="prompt_tuning/configs/melodi/optax_optimizer.gin" \
-  --gin_file="../melodi/experimental/gins/tasks/flan.gin" \
+  --gin_file="../melodi/experimental/gins/tasks/sst2.gin" \
   --gin_file="../melodi/experimental/gins/methods/prompt_init/spot_c4.gin" \
+  --gin.FLAN_TASK="'glue_qqp_type_0'" \
   --gin.MODEL_DIR="'${MODEL_DIR}'" \
   --gin.INITIAL_CHECKPOINT_PATH="'${PRETRAINED_MODEL}'" \
-  --gin.FLAN_TASK="'aeslc_type_0'" \
   --gin.TRAIN_STEPS="1_105_000" \
   --gin.EVAL_PERIOD=50 \
   --gin.DROPOUT_RATE=0.0 \
-  --gin.OPTAX_LEARNING_RATE=1.0 \
+  --gin.OPTAX_LEARNING_RATE=0.3 \
   --gin.OPTAX_MOMENTUM=0.0 \
-  --gin.OPTAX_MELODI_PATH='"gs://melodi-bucket0/melodi_training/xl-newhyper/task=flan15_nodropout/model=small_sequence/horizon=4/memory=128/bsz=1024/lr=5e-5/1672956704"' \
+  --gin.OPTAX_MELODI_PATH='"gs://melodi-bucket0/melodi_training/xl-newhyper/task=flan10star_nodropout_cut1500_flan15_eval/model=base_sequence/horizon=4/memory=128/bsz=256/lr=5e-5/1676506604"' \
   --gin.OPTAX_MELODI_MEMORY=128 \
-  --gin.OPTAX_MELODI_MODEL='"gradients"' \
-  --gin.OPTAX_OPTIMIZER='"melodi"' \
+  --gin.OPTAX_MELODI_MODEL='"base-gradients"' \
+  --gin.OPTAX_OPTIMIZER='"adafactor"' \
   --gin.BATCH_SIZE=128 \
   --gin.Trainer.num_microbatches=64 \
   --gin.PROMPT_LENGTH=100 \
+  --gin.RANDOM_SEED=102 \
   --gin.partitioning.PjitPartitioner.model_parallel_submesh="(2,2,1,2)" \
   --gin.train_eval/utils.DatasetConfig.batch_size=64 \
   --gin.infer_eval/utils.DatasetConfig.batch_size=64 \
