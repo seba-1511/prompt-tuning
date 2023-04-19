@@ -31,15 +31,15 @@ python3 -m t5x.train \
   --gin.MODEL_DIR="'${MODEL_DIR}'" \
   --gin.INITIAL_CHECKPOINT_PATH="'${PRETRAINED_MODEL}'" \
   --gin.TRAIN_STEPS="1_103_000" \
-  --gin.EVAL_PERIOD=1 \
+  --gin.EVAL_PERIOD=50 \
   --gin.EVAL_STEPS=100 \
   --gin.DROPOUT_RATE=0.0 \
   --gin.OPTAX_LEARNING_RATE=1.0 \
   --gin.OPTAX_MOMENTUM=0.0 \
-  --gin.OPTAX_MELODI_PATH='"gs://melodi-bucket0/melodi_training/xl-newhyper/task=flan10star_nodropout_cut1500_flan15_eval/model=xl_sequence_projected_proj1024/horizon=4/memory=128/bsz=1024/lr=3e-4/mse=uniform/1681158811/inference-melodi-mnli_mismatched-xl_sequence_proj1024_train2k-flan10star_cut1500-h4m128-uniform_mse-3k-fix_idx-1681324662/train_updates"' \
+  --gin.OPTAX_MELODI_PATH='"gs://melodi-bucket0/melodi_training/xl-newhyper/task=flan10star_nodropout_cut1500_flan15_eval/model=xl_sequence_projected_proj1024/horizon=4/memory=128/bsz=1024/lr=3e-4/mse=uniform/1681158811"' \
   --gin.OPTAX_MELODI_MEMORY=128 \
-  --gin.OPTAX_MELODI_MODEL='"gradients"' \
-  --gin.OPTAX_OPTIMIZER='"precomputed_optimizer"' \
+  --gin.OPTAX_MELODI_MODEL='"xl-gradients-projected"' \
+  --gin.OPTAX_OPTIMIZER='"melodi"' \
   --gin.BATCH_SIZE=128 \
   --gin.Trainer.num_microbatches=32 \
   --gin.PROMPT_LENGTH=100 \
