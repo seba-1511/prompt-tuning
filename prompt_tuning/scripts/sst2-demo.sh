@@ -36,9 +36,9 @@ python3 -m t5x.train \
   --gin.DROPOUT_RATE=0.0 \
   --gin.OPTAX_LEARNING_RATE=1.0 \
   --gin.OPTAX_MOMENTUM=0.0 \
-  --gin.OPTAX_MELODI_PATH='"gs://melodi-bucket0/melodi_training/xl-newhyper/task=flan10star_nodropout_cut1500_flan15_eval/model=multitoken_base_sequence_proj1024/horizon=4/memory=6/bsz=512/lr=3e-4/mse=uniform/first_run"' \
-  --gin.OPTAX_MELODI_MEMORY=6 \
-  --gin.OPTAX_MELODI_MODEL='"base-gradients-multitoken"' \
+  --gin.OPTAX_MELODI_PATH='"gs://melodi-bucket0/melodi_training/xl-newhyper/task=flan10star_nodropout_cut1500_flan15_eval/model=multitoken_small_sequence_projected_proj1024/horizon=4/memory=12/bsz=512/lr=3e-4/mse=uniform/1683098744"' \
+  --gin.OPTAX_MELODI_MEMORY=12 \
+  --gin.OPTAX_MELODI_MODEL='"gradients-multitoken-projected"' \
   --gin.OPTAX_OPTIMIZER='"melodi"' \
   --gin.BATCH_SIZE=128 \
   --gin.Trainer.num_microbatches=32 \
