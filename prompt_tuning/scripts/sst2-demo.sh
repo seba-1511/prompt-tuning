@@ -26,7 +26,7 @@ python3 -m t5x.train \
   --gin_file="prompt_tuning/configs/runs/prompt_finetune.gin" \
   --gin_file="prompt_tuning/configs/melodi/optax_optimizer.gin" \
   --gin_file="../melodi/experimental/gins/tasks/flan.gin" \
-  --gin_file="../melodi/experimental/gins/methods/prompt_init/spot_c4.gin" \
+  --gin_file="../melodi/experimental/gins/methods/prompt_init/class_labels_small.gin" \
   --gin.FLAN_TASK="'mnli_mismatched_type_0'" \
   --gin.MODEL_DIR="'${MODEL_DIR}'" \
   --gin.INITIAL_CHECKPOINT_PATH="'${PRETRAINED_MODEL}'" \
@@ -36,14 +36,14 @@ python3 -m t5x.train \
   --gin.DROPOUT_RATE=0.0 \
   --gin.OPTAX_LEARNING_RATE=1.0 \
   --gin.OPTAX_MOMENTUM=0.0 \
-  --gin.OPTAX_MELODI_PATH='"gs://melodi-bucket0/melodi_training/xl-newhyper/task=mnli_mismatched_nodropout_cut1500_flan15_eval/model=multitoken_base_sequence_proj1024/horizon=4/memory=6/bsz=512/lr=3e-4/mse=uniform/1682661173"' \
+  --gin.OPTAX_MELODI_PATH='"gs://melodi-bucket0/melodi_training/xl-newhyper/task=mnli_mismatched_nodropout_20prompts_cut1500/model=multitoken_base_sequence/horizon=4/memory=6/bsz=512/lr=3e-4/mse=uniform/1684356754/"' \
   --gin.OPTAX_MELODI_MEMORY=6 \
   --gin.OPTAX_MELODI_MODEL='"base-gradients-multitoken"' \
   --gin.OPTAX_OPTIMIZER='"melodi"' \
   --gin.BATCH_SIZE=128 \
   --gin.Trainer.num_microbatches=32 \
-  --gin.PROMPT_LENGTH=100 \
-  --gin.RANDOM_SEED=101 \
+  --gin.PROMPT_LENGTH=20 \
+  --gin.RANDOM_SEED=100 \
   --gin.partitioning.PjitPartitioner.model_parallel_submesh="(2,2,1,2)" \
   --gin.train_eval/utils.DatasetConfig.batch_size=64 \
   --gin.infer_eval/utils.DatasetConfig.batch_size=64 \
