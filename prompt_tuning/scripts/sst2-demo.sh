@@ -36,7 +36,7 @@ python3 -m t5x.train \
   --gin.DROPOUT_RATE=0.0 \
   --gin.OPTAX_LEARNING_RATE=1.0 \
   --gin.OPTAX_MOMENTUM=0.0 \
-  --gin.OPTAX_MELODI_PATH='"gs://melodi-bucket0/melodi_training/xl-newhyper/task=mnli_mismatched_nodropout_20prompts_cut1500/model=multitoken_base_sequence/horizon=4/memory=6/bsz=512/lr=3e-4/mse=uniform/1684356754/"' \
+  --gin.OPTAX_MELODI_PATH='"gs://melodi-bucket0/melodi_training/xl-newhyper/task=mnli_mismatched_nodropout_20prompts_cut1500/model=multitoken_base_sequence/horizon=4/memory=6/bsz=512/lr=3e-4/mse=uniform/1684884342/"' \
   --gin.OPTAX_MELODI_MEMORY=6 \
   --gin.OPTAX_MELODI_MODEL='"base-gradients-multitoken"' \
   --gin.OPTAX_OPTIMIZER='"melodi"' \
