@@ -30,13 +30,13 @@ python3 -m t5x.train \
   --gin.FLAN_TASK="'mnli_mismatched_type_0'" \
   --gin.MODEL_DIR="'${MODEL_DIR}'" \
   --gin.INITIAL_CHECKPOINT_PATH="'${PRETRAINED_MODEL}'" \
-  --gin.TRAIN_STEPS="1_103_000" \
+  --gin.TRAIN_STEPS="1_101_000" \
   --gin.EVAL_PERIOD=50 \
   --gin.EVAL_STEPS=100 \
   --gin.DROPOUT_RATE=0.0 \
   --gin.OPTAX_LEARNING_RATE=1.0 \
   --gin.OPTAX_MOMENTUM=0.0 \
-  --gin.OPTAX_MELODI_PATH='"gs://melodi-bucket0/melodi_training/xl-newhyper/task=mnli_mismatched_nodropout_20prompts_cut1500/model=multitoken_base_sequence/horizon=4/memory=6/bsz=512/lr=3e-4/mse=uniform/1684884342/"' \
+  --gin.OPTAX_MELODI_PATH='"gs://melodi-bucket0/melodi_training/xl-newhyper/task=flan11star_nodropout_20prompts_cut1500/model=multitoken_base_sequence_parampreds/horizon=8/memory=6/bsz=512/lr=3e-4/mse=uniform/1685608673/"' \
   --gin.OPTAX_MELODI_MEMORY=6 \
   --gin.OPTAX_MELODI_MODEL='"base-gradients-multitoken"' \
   --gin.OPTAX_OPTIMIZER='"melodi"' \
