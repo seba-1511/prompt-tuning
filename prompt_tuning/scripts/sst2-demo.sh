@@ -18,7 +18,7 @@ PRETRAINED_MODEL="gs://t5-data/pretrained_models/t5x/t5_1_1_lm100k_xl/checkpoint
 FLAN_TASK="mnli_mismatched_type_0"
 
 # melodi
-MODEL_DIR="gs://melodi-bucket0/melodi_evaluation/debug/debug-switching/task=${FLAN_TASK}/model=xl_nodropout_spot/method=adafactor-melodi-switch64-h16-gradients-base_multitoken-flan_qnli_snli_cut1500_20prompts_10trajs-h16m4-lr1.0-dp0.0-eval50/${TIME}/"
+MODEL_DIR="gs://melodi-bucket0/melodi_evaluation/debug/debug-switching/task=${FLAN_TASK}/model=xl_nodropout_spot/method=adafactor-melodi-switch0-h16-gradients-base_multitoken-flan_qnli_snli_cut1500_20prompts_10trajs-h16m4-lr1.0-dp0.0-eval50/${TIME}/"
 python3 -m t5x.train \
   --gin_search_paths="${T5X_DIR},${FLAXFORMER_DIR},${PROMPT_DIR}" \
   --gin_file="prompt_tuning/configs/models/t5_1_1_xl_prompt.gin" \
@@ -38,7 +38,7 @@ python3 -m t5x.train \
   --gin.OPTAX_MELODI_PATH='"gs://melodi-bucket0/melodi_training/xl-newhyper/task=flan_qnli_snli_nodropout_20prompts_10trajs_cut1500/model=multitoken_base_sequence/horizon=16/memory=4/bsz=512/lr=1e-3/mse=uniform/1686170598/"' \
   --gin.OPTAX_MELODI_MEMORY=4 \
   --gin.OPTAX_MELODI_MODEL='"base-gradients-multitoken"' \
-  --gin.OPTAX_OPTIMIZER='"adafactor-melodi-switch64-h16"' \
+  --gin.OPTAX_OPTIMIZER='"adafactor-melodi-switch0-h16"' \
   --gin.BATCH_SIZE=128 \
   --gin.Trainer.num_microbatches=32 \
   --gin.PROMPT_LENGTH=20 \
