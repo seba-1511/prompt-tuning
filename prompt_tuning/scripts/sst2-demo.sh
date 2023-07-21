@@ -65,7 +65,7 @@ python3 -m t5x.train \
   --gin.DROPOUT_RATE=0.0 \
   --gin.OPTAX_LEARNING_RATE=1.0 \
   --gin.OPTAX_MOMENTUM=0.0 \
-  --gin.OPTAX_MELODI_PATH='"gs://melodi-bucket0/melodi_training/20230717/xl-newhyper/task=flan_qnli_snli_rte_nodropout_20prompts_10trajs_cut1024_parampreds0/model=multitoken_base_sequence_gfirst0_resNone/horizon=16/memory=4/bsz=512/lr=1e-4/mse=uniform/1689749729/inference-melodi-mse=uniform-flan_mnli_cut2000-h16m4-1689921470/' \
+  --gin.OPTAX_MELODI_PATH='"gs://melodi-bucket0/melodi_training/20230717/xl-newhyper/task=flan_qnli_snli_rte_nodropout_20prompts_10trajs_cut1024_parampreds0/model=multitoken_base_sequence_gfirst0_resNone/horizon=16/memory=4/bsz=512/lr=1e-4/mse=uniform/1689749729/inference-melodi-mse=uniform-flan_mnli_cut2000-h16m4-1689921470/"' \
   --gin.OPTAX_MELODI_MEMORY=4 \
   --gin.OPTAX_MELODI_MODEL='"base-gradients-multitoken"' \
   --gin.OPTAX_OPTIMIZER='"melodi"' \
