@@ -18,7 +18,7 @@ PRETRAINED_MODEL="gs://t5-data/pretrained_models/t5x/t5_1_1_lm100k_xl/checkpoint
 FLAN_TASK="mnli_mismatched_type_0"
 
 # melodi
-MODEL_DIR="gs://melodi-bucket0/melodi_evaluation/20230703/task=${FLAN_TASK}/model=xl_nodropout_spot/method=melodi_mse_uniform-h16-gradients-base_multitoken-flan_mnli_cut1024_20prompts_20trajs-h16m4-lr1.0-dp0.0-eval50/${TIME}/"
+MODEL_DIR="gs://melodi-bucket0/melodi_evaluation/20230717/task=${FLAN_TASK}/model=xl_nodropout_spot/method=melodi_mse_uniform-h16-gradients-base_multitoken-flan_mnli_cut1024_20prompts_20trajs-h16m4-lr1.0-dp0.0-eval50/${TIME}/"
 python3 -m t5x.train \
   --gin_search_paths="${T5X_DIR},${FLAXFORMER_DIR},${PROMPT_DIR}" \
   --gin_file="prompt_tuning/configs/models/t5_1_1_xl_prompt.gin" \
@@ -48,7 +48,7 @@ python3 -m t5x.train \
   --gin.infer_eval/utils.DatasetConfig.batch_size=64 \
   --tfds_data_dir=${TFDS_DATA_DIR}
 
-MODEL_DIR="gs://melodi-bucket0/melodi_evaluation/20230703/task=${FLAN_TASK}/model=xl_nodropout_spot/method=melodi_mse_rawnormrawcos-h16-gradients-base_multitoken-flan_mnli_cut1024_20prompts_20trajs-h16m4-lr1.0-dp0.0-eval50/${TIME}/"
+MODEL_DIR="gs://melodi-bucket0/melodi_evaluation/20230717/task=${FLAN_TASK}/model=xl_nodropout_spot/method=melodi_mse_rawnormrawcos-h16-gradients-base_multitoken-flan_mnli_cut1024_20prompts_20trajs-h16m4-lr1.0-dp0.0-eval50/${TIME}/"
 python3 -m t5x.train \
   --gin_search_paths="${T5X_DIR},${FLAXFORMER_DIR},${PROMPT_DIR}" \
   --gin_file="prompt_tuning/configs/models/t5_1_1_xl_prompt.gin" \
