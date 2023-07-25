@@ -18,7 +18,7 @@ PRETRAINED_MODEL="gs://t5-data/pretrained_models/t5x/t5_1_1_lm100k_xl/checkpoint
 FLAN_TASK="mnli_mismatched_type_0"
 
 # melodi
-MODEL_DIR="gs://melodi-bucket0/melodi_evaluation/20230703/task=${FLAN_TASK}/model=xl_nodropout_spot/method=melodi_mse_uniform-h16-gradients-base_multitoken-flan_mnli_cut1024_20prompts_20trajs-h16m4-lr1.0-dp0.0-eval50/${TIME}/"
+MODEL_DIR="gs://melodi-bucket0/melodi_evaluation/20230724/task=${FLAN_TASK}/model=xl_nodropout_spot/method=melodi_mse_rawnorm-h8-gradients-base_multitoken-flan10star_cut1024_20prompts_10trajs-h8m4-lr1.0-dp0.0-eval50/${TIME}/"
 python3 -m t5x.train \
   --gin_search_paths="${T5X_DIR},${FLAXFORMER_DIR},${PROMPT_DIR}" \
   --gin_file="prompt_tuning/configs/models/t5_1_1_xl_prompt.gin" \
@@ -35,7 +35,7 @@ python3 -m t5x.train \
   --gin.DROPOUT_RATE=0.0 \
   --gin.OPTAX_LEARNING_RATE=1.0 \
   --gin.OPTAX_MOMENTUM=0.0 \
-  --gin.OPTAX_MELODI_PATH='"gs://melodi-bucket0/melodi_training/20230717/xl-newhyper/task=flan_mnli_nodropout_20prompts_20trajs_parampreds_cut1024_parampreds0/model=multitoken_base_sequence_gfirst0_resNone/horizon=16/memory=4/bsz=512/lr=1e-4/mse=uniform/1689749812/"' \
+  --gin.OPTAX_MELODI_PATH='"gs://melodi-bucket0/melodi_training/20230724/xl-newhyper/task=flan10star_nodropout_20prompts_10trajs_cut1024_parampreds0/model=multitoken_base_sequence_gfirst0_resNone/horizon=8/memory=4/bsz=512/lr=1e-4/mse=rawnorm/1689971879/"' \
   --gin.OPTAX_MELODI_MEMORY=4 \
   --gin.OPTAX_MELODI_MODEL='"base-gradients-multitoken"' \
   --gin.OPTAX_OPTIMIZER='"melodi"' \
@@ -48,7 +48,7 @@ python3 -m t5x.train \
   --gin.infer_eval/utils.DatasetConfig.batch_size=64 \
   --tfds_data_dir=${TFDS_DATA_DIR}
 
-MODEL_DIR="gs://melodi-bucket0/melodi_evaluation/20230703/task=${FLAN_TASK}/model=xl_nodropout_spot/method=melodi_mse_rawnormrawcos-h16-gradients-base_multitoken-flan_mnli_cut1024_20prompts_20trajs-h16m4-lr1.0-dp0.0-eval50/${TIME}/"
+MODEL_DIR="gs://melodi-bucket0/melodi_evaluation/20230724/task=${FLAN_TASK}/model=xl_nodropout_spot/method=melodi_mse_rawnorm-h16-gradients-base_multitoken-flan10star_cut1024_20prompts_10trajs-h16m4-lr1.0-dp0.0-eval50/${TIME}/"
 python3 -m t5x.train \
   --gin_search_paths="${T5X_DIR},${FLAXFORMER_DIR},${PROMPT_DIR}" \
   --gin_file="prompt_tuning/configs/models/t5_1_1_xl_prompt.gin" \
@@ -65,7 +65,7 @@ python3 -m t5x.train \
   --gin.DROPOUT_RATE=0.0 \
   --gin.OPTAX_LEARNING_RATE=1.0 \
   --gin.OPTAX_MOMENTUM=0.0 \
-  --gin.OPTAX_MELODI_PATH='"gs://melodi-bucket0/melodi_training/20230717/xl-newhyper/task=flan_qnli_snli_rte_nodropout_20prompts_10trajs_cut1024_parampreds0/model=multitoken_base_sequence_gfirst0_resNone/horizon=16/memory=4/bsz=512/lr=1e-4/mse=uniform/1689749729/inference-melodi-mse=uniform-flan_mnli_cut2000-h16m4-1689921470/' \
+  --gin.OPTAX_MELODI_PATH='"gs://melodi-bucket0/melodi_training/20230724/xl-newhyper/task=flan10star_nodropout_20prompts_10trajs_cut1024_parampreds0/model=multitoken_base_sequence_gfirst0_resNone/horizon=16/memory=4/bsz=512/lr=1e-4/mse=rawnorm/1689981563/"' \
   --gin.OPTAX_MELODI_MEMORY=4 \
   --gin.OPTAX_MELODI_MODEL='"base-gradients-multitoken"' \
   --gin.OPTAX_OPTIMIZER='"melodi"' \
